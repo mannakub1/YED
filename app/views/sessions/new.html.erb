@@ -1,15 +1,26 @@
-<h1>Log in</h1>
-<div class="row">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="login">
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="page-header col-sm-offset-3 col-sm-7">
+ 	<h3 >Log in</h3>
+</div>
+<div class="form-horizontal">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :Email %><br>
-      <%= f.email_field :string, class: 'form-control' %>
+      <%= f.label :email %><br>
+      <%= f.email_field :string, class: 'form-control'  %>
      	 <br>
       <%= f.label :password %><br>
       <%= f.password_field :password, class: 'form-control' %>
 		<br>
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Log in", class: "btn btn-default" %>
     <% end %>
     <br>
     <% if flash[:danger] %>

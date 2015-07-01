@@ -5,9 +5,19 @@
   <%= @blog.title %>
 </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @blog.content %>
-</p>
+<label for="textarea" class="col-md-2 control-label">
+	Content
+</label>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    <%= @blog.content%>
+  </div>
+</div>
+<textarea class="form-control" rows="5" type="text" value="	<%= @blog.content%>	" id="blog_contefdsnt" ></textarea>
+
+  
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>

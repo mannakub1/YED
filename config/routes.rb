@@ -3,12 +3,18 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get    'blog/new' => 'blogs#new'
+  get 'singin' => 'sessions#new'
+  post 'singin' => 'sessions#create'
   root 'sessions#new'
+  get 'profile' => 'user#edit'
+  post'profile' => 'user#edit'
   resources :users
   resources :sessions
   resources :blogs
 
   namespace :api , defaults: { format: 'json' } do
+    get 'api/blogs/:id' => 'blogs#index'
     resources :users
     resources :blogs    
   end

@@ -1,9 +1,10 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_user, only: [:new ]
   # GET /blogs
   # GET /blogs.json
   def index
+    @User = current_user 
     @blogs = current_user.blogs
   end
 
@@ -19,6 +20,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
+     @User = User.find(params[:id])
   end
 
   # POST /blogs
@@ -65,6 +67,10 @@ class BlogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])
+    end
+
+    def set_user 
+        @User = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

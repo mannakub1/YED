@@ -1,4 +1,20 @@
-<h1>Editing Blog</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<%= blogs_path %>">
+        <img alt="Brand" src="...">
+      </a>
+       <a class="navbar-brand" href="<%= user_path(current_user)  %>">
+        Profile
+      </a>
+
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <h1>By <%= @User.string%></h1>
+  <p></p>
+</div>
 
 <%= render 'form' %>
 
